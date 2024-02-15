@@ -1,11 +1,14 @@
 import { connectToDB } from "@utils/database"  
 import Prompt from "@models/prompt"
 
-export const GET = async (request) => {
+export const GET = async (request, {params}) => {
   try {
     await connectToDB()
-    /** Find through all the posts and let us know who is the creator */
-    const prompts = await Prompt.find({}).populate('creator')
+    
+    /** Here I set the {params} inside of the find(), to get specific creator id */
+    const prompts = await Prompt.find({
+        creator: params.id
+    }).populate('creator')
     return new Response(JSON.stringify(prompts), { status: 200 })
       
   } catch (error) {
