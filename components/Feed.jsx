@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import { useSession } from "next-auth/react"
 import PromptCard from "./PromptCard"
 
 const PromptCardList = ({data, handleTagClick}) => {
@@ -18,8 +19,10 @@ const PromptCardList = ({data, handleTagClick}) => {
 }
 
 const Feed = () => {
+  const { data: session } = useSession()
   const [searchText, setSearchText] = useState("")
   const [posts, setPost] = useState([])
+
 
   const handleSearchChange = (e) => {
     setSearchText(e.target.value)
@@ -49,11 +52,17 @@ const Feed = () => {
         />
       </form>
 
-    <PromptCardList
+    {session?.user.id ? (
+      <PromptCardList
       data={posts}
       handleTagClick={() => {}}
       searchText={searchText}
     />
+    ) : (
+      <p>Sign In to see your personal feed </p>
+    )}
+
+    
 
     </section>
   )
