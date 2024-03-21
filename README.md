@@ -1,7 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Introduction
+Develop a Next.js application that highlights the key features of Next.js along with a comprehensive CRUD AI Prompt sharing system utilizing a MongoDB database and implementing NextAuth authentication.
+
+## Tech Stack
+- NextJs
+- NextAuth
+- TailwindCSS
+- MongoDB
 
 ## Getting Started ⚙️
 
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 First, run the development server:
 
 ```bash
@@ -25,5 +33,5 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 
 ### Credits ✨
-I have made this project following the [JavaScript Mastery tutorial].(https://github.com/adrianhajdin/project_next_14_ai_prompt_sharing)
+I have made this project following the [JavaScript Mastery tutorial](https://github.com/adrianhajdin/project_next_14_ai_prompt_sharing).
 
